@@ -1,5 +1,6 @@
-package client;
+package controllers;
 
+import controllers.client.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -45,8 +46,36 @@ public class MainApp extends Application
         // TODO: 25.10.2017
     }
 
+    public void showSignInWindow()
+    {
+        /*try
+        {
+            Stage dialogStage = new Stage()
+        }*/
+    }
+
     public static void main(String[] args)
     {
         launch(args);
     }
+
+    /*private Controller createController(String loaderResource, String titleElement,
+                                        String imageLocation, Stage dialogStage, boolean isResizable) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(loaderResource));
+        AnchorPane pane = loader.load();
+
+        dialogStage.setTitle(elementName(titleElement));
+
+        dialogStage.setResizable(isResizable);
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+
+        dialogStage.initOwner(primaryStage);
+        Scene scene = new Scene(pane);
+        dialogStage.setScene(scene);
+        dialogStage.getIcons().add(new Image(imageLocation));
+
+        return loader.getController();
+    }*/
 }

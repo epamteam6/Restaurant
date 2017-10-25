@@ -1,6 +1,6 @@
-package client.controllers;
+package controllers.client;
 
-import client.MainApp;
+import controllers.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,7 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class SingInController
+public class SignInController implements Controller
 {
     @FXML
     Label usernameLabel;
@@ -29,7 +29,7 @@ public class SingInController
 
     private MainApp mainApp;
 
-    public SingInController()
+    public SignInController()
     {
     }
 
