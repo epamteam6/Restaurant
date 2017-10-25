@@ -4,13 +4,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="36.0" layoutY="35.0" text="User:" />
-      <Label layoutX="36.0" layoutY="65.0" text="Password:" />
-      <TextField layoutX="104.0" layoutY="31.0" />
-      <TextField layoutX="104.0" layoutY="61.0" />
-      <Button layoutX="200.0" layoutY="102.0" mnemonicParsing="false" text="Sign In" />
+      <Label layoutX="37.0" layoutY="31.0" prefHeight="25.0" prefWidth="62.0" text="Username:" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="182.0" AnchorPane.topAnchor="31.0" />
+      <Label layoutX="37.0" layoutY="65.0" text="Password:" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="182.0" AnchorPane.topAnchor="65.0" />
+      <TextField layoutX="104.0" layoutY="61.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="61.0" />
+      <Button layoutX="200.0" layoutY="102.0" mnemonicParsing="false" text="Sign In" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="102.0" />
+      <TextField layoutX="104.0" layoutY="31.0" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="31.0" />
    </children>
 </AnchorPane>
