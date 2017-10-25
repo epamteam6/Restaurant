@@ -19,7 +19,6 @@ public class MainApp extends Application
         this.primaryStage.setTitle("Restaurant app");
         
         initRootLayout();
-        
         showMainWindow();
     }
 
