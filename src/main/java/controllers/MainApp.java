@@ -1,6 +1,8 @@
 package controllers;
 
 import controllers.client.Controller;
+import controllers.client.MainViewController;
+import controllers.client.RootController;
 import controllers.client.SignInController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,13 +19,14 @@ public class MainApp extends Application
     private Stage primaryStage;
     private BorderPane rootLayout;
 
+    @Override
     public void start(Stage primaryStage) throws Exception
     {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Restaurant app");
         
         initRootLayout();
-        showMainWindow();
+        initMainView();
     }
 
     private void initRootLayout()
@@ -32,7 +35,10 @@ public class MainApp extends Application
         {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
+            rootLayout = loader.load();
+
+            RootController controller = loader.getController();
+            controller.setMainApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -44,9 +50,24 @@ public class MainApp extends Application
         }
     }
 
-    private void showMainWindow()
+    private void initMainView()
     {
-        // TODO: 25.10.2017
+        try
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/MainView.fxml"));
+            AnchorPane mainWind = loader.load();
+
+            rootLayout.setCenter(mainWind);
+
+            MainViewController controller = loader.getController();
+            controller.setMainApp(this);
+
+            controller.applyInterface();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void showSignInWindow()
@@ -56,6 +77,7 @@ public class MainApp extends Application
             Stage dialogStage = new Stage();
             SignInController controller = (SignInController) createController("/SignInWindow.fxml", null,
                     null, dialogStage,false);
+            controller.setMainApp(this);
 
             controller.setDialogStage(dialogStage);
             dialogStage.show();
@@ -76,7 +98,7 @@ public class MainApp extends Application
                                         String imageLocation, Stage dialogStage, boolean isResizable) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(loaderResource));
+        loader.setLocation(MainApp.class.getResource(loaderResource));
         AnchorPane pane = loader.load();
 
         dialogStage.setTitle(/*elementName(titleElement)*/"TODO TITLE NAMES LOC");
