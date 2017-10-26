@@ -1,10 +1,13 @@
 package controllers;
 
 import controllers.client.Controller;
+import controllers.client.SignInController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,10 +51,19 @@ public class MainApp extends Application
 
     public void showSignInWindow()
     {
-        /*try
+        try
         {
-            Stage dialogStage = new Stage()
-        }*/
+            Stage dialogStage = new Stage();
+            SignInController controller = (SignInController) createController("/SignInWindow.fxml", null,
+                    null, dialogStage,false);
+
+            controller.setDialogStage(dialogStage);
+            dialogStage.show();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args)
@@ -59,14 +71,15 @@ public class MainApp extends Application
         launch(args);
     }
 
-    /*private Controller createController(String loaderResource, String titleElement,
+
+    private Controller createController(String loaderResource, String titleElement,
                                         String imageLocation, Stage dialogStage, boolean isResizable) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(loaderResource));
         AnchorPane pane = loader.load();
 
-        dialogStage.setTitle(elementName(titleElement));
+        dialogStage.setTitle(/*elementName(titleElement)*/"TODO TITLE NAMES LOC");
 
         dialogStage.setResizable(isResizable);
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -74,8 +87,8 @@ public class MainApp extends Application
         dialogStage.initOwner(primaryStage);
         Scene scene = new Scene(pane);
         dialogStage.setScene(scene);
-        dialogStage.getIcons().add(new Image(imageLocation));
+        //dialogStage.getIcons().add(new Image(imageLocation));
 
         return loader.getController();
-    }*/
+    }
 }
