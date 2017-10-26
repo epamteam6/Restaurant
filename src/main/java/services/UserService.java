@@ -1,6 +1,8 @@
-package model;
+package services;
 
-public class User
+import entity.Order;
+
+public class UserService
 {
     public boolean makeOrder()
     {
@@ -23,7 +25,7 @@ public class User
         return false;
     }
 
-    public boolean payBill(Bill bill)
+    public boolean payBill(Order order)
     {
         // TODO: 23.10.2017
 

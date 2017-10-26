@@ -1,6 +1,8 @@
-package model;
+package services;
 
-public class Admin
+import entity.Order;
+
+public class AdminService
 {
     public boolean confirmOrder(Order order)
     {
@@ -18,7 +20,7 @@ public class Admin
 
     public void displayAllBills()
     {
-        // TODO: 23.10.2017 MAKE METHODS FOR NEW BILLS AND ALL BILLS TOO
+        // TODO: 26.10.2017  
     }
 
     public void orderDetails(Order order)
